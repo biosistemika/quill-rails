@@ -20,7 +20,6 @@
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
 
-            [{ 'header': 1 }, { 'header': 2 }],               // custom button values
             [{ 'list': 'ordered'}, { 'list': 'bullet' }],
             [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
             [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
@@ -45,13 +44,26 @@
           fullEditor.on('text-change', function(delta, source) {
             copyToInput()
           });
-          copyToInput()
+          copyToInput();
+          add_label_to_dropdowns();
         } else {
           setTimeout(initQuill, 50);
         }
       }
 
       initQuill();
-    })()
+
+    	function add_label_to_dropdowns() {
+  			$('.ql-size')
+          .parent('.ql-formats')
+          .prepend('<span class="ql-custom-element pull-left">Size: </span>');
+
+  			$('.ql-header')
+          .parent('.ql-formats')
+          .prepend('<span class="ql-custom-element pull-left">Style: </span>');
+
+    	}
+
+    })();
   </script>
 </div>
