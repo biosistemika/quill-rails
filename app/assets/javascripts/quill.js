@@ -1,3 +1,4 @@
+//= require highlight
 /*!
  * Quill Editor v1.1.5
  * https://quilljs.com/

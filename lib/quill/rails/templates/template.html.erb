@@ -6,7 +6,7 @@
     (function() {
       function initQuill() {
         if (typeof Quill != 'undefined'){
-          // Initialize editor with custom theme and modules
+          // Initialize editor with custom theme and module
 
           function copyToInput() {
             document.getElementById('<%= @input_id %>').value = fullEditor
@@ -36,7 +36,9 @@
 
           var fullEditor = new Quill('#full-editor-<%= @input_id %>', {
             modules: {
-              toolbar: toolbarOptions
+              toolbar: toolbarOptions,
+              clipboard: true,
+              syntax: true
             },
             theme: 'snow'
           });
@@ -52,7 +54,7 @@
       }
 
       initQuill();
-
+      hljs.initHighlightingOnLoad();
     	function add_label_to_dropdowns() {
   			$('.ql-size')
           .parent('.ql-formats')
