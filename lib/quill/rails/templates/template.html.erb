@@ -15,6 +15,15 @@
                                                                   .innerHTML;
           }
 
+          function destoy_pasted_images() {
+            var value = fullEditor.container.firstChild.innerHTML;
+            if (value.match(/<img/)) {
+              fullEditor
+                .container
+                .firstChild
+                .innerHTML = value.replace(/\<img .+?\>/ig, "");
+            }
+          }
 
           var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -42,7 +51,8 @@
           });
 
           fullEditor.on('text-change', function(delta, source) {
-            copyToInput()
+            destoy_pasted_images();
+            copyToInput();
           });
           copyToInput();
           add_label_to_dropdowns();
@@ -61,6 +71,7 @@
           .parent('.ql-formats')
           .prepend('<span class="ql-custom-element pull-left">Style:&nbsp;</span>');
     	}
+
     })();
   </script>
 </div>
