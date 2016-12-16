@@ -1,5 +1,5 @@
 /*
- *= require dracula
+ *= require github
  */
 
 /*!
@@ -636,8 +636,7 @@ li.ql-indent-9.ql-direction-rtl.ql-align-right {
   letter-spacing: -2px;
 }
 .ql-snow .ql-editor pre.ql-syntax {
-  background-color: #23241f;
-  color: #f8f8f2;
+  background-color: #f5f5f5;
   overflow: visible;
 }
 .ql-snow .ql-editor img {
